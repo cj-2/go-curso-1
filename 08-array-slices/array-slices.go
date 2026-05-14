@@ -35,4 +35,22 @@ func main() {
 
 	fmt.Println(reflect.TypeOf(array1)) // [5]string
 	fmt.Println(reflect.TypeOf(slice1)) // []int
+
+	fmt.Println("-------")
+	// Arrays Internos
+	slice3 := make([]float32, 10, 11) // tipo, tamanho, tamanho máximo
+	fmt.Println(slice3)
+	fmt.Println(len(slice3), cap(slice3), "=> Tem espaço") // tamanho, capacidade
+
+	slice3 = append(slice3, 1)
+	fmt.Println(len(slice3), cap(slice3), "=> Espaço limite")
+
+	// Estourando o limite que era 11.
+	slice3 = append(slice3, 1)
+	fmt.Println(len(slice3), cap(slice3), "=> Capacidade duplicada")
+
+	slice4 := make([]float32, 5)
+	fmt.Println(slice4, len(slice4), cap(slice4))
+	slice4 = append(slice4, 1)
+	fmt.Println(slice4, len(slice4), cap(slice4))
 }
